@@ -8,7 +8,7 @@ import 'ListDetailScreen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Colors.yellowAccent
+    statusBarColor: Colors.blueAccent
   ));
   runApp(const MyApp());
 }
