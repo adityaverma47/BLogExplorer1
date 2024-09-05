@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="INTERNET"/>
     <application
         android:label="blog_explorer"
         android:name="${applicationName}"
