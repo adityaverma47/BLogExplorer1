@@ -1,13 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'ListData.dart';
 import 'ListDetailScreen.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.blueAccent
   ));
   runApp(const MyApp());
@@ -17,14 +16,12 @@ class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  // late List<dynamic> products;
   late List<ListData> blogList = [];
-  bool _isLoading=true; //bool variable
+  bool _isLoading=true;
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +31,7 @@ class _MyAppState extends State<MyApp> {
     ]);
     if(_isLoading){
       fetchBlogs().whenComplete(() => {
-        // Fluttertoast.showToast(
-        //     msg: "${blogList.length}",
-        //     toastLength: Toast.LENGTH_SHORT,
-        //     gravity: ToastGravity.CENTER,
-        //     timeInSecForIosWeb: 1,
-        //     textColor: Colors.white,
-        //     fontSize: 16.0
-        // ),
+
         setState(() {})
       });
     }
@@ -59,8 +49,8 @@ class _MyAppState extends State<MyApp> {
           itemBuilder: (context, index) {
             return ElevatedButton(
               child: Container(
-                  margin: EdgeInsets.all(4.0),
-                  padding: EdgeInsets.all(8.0),
+                  margin: const EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(8.0),
                   decoration:BoxDecoration(
                       borderRadius:BorderRadius.circular(9),
                       color:Colors.white
@@ -97,7 +87,6 @@ class _MyAppState extends State<MyApp> {
                     ],
                   )),
               onPressed: () {
-                //   navigate to another screen
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) =>  ListDetailScreen(blogList[index],const Key("data"))),
@@ -112,12 +101,6 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  // Future<List<dynamic>> fetchUsers() async {
-  //   var result = await http.get(Uri.parse("https://randomuser.me/api/?results=20"));
-  //   products = jsonDecode(result.body)['results'];
-  //   return products;
-  // }
-
   Future<List<ListData>> fetchBlogs() async {
     blogList = [];
     const String url = 'https://intent-kit-16.hasura.app/api/rest/blogs';
@@ -129,7 +112,6 @@ class _MyAppState extends State<MyApp> {
       });
 
       if (response.statusCode == 200) {
-        // Request successful, handle the response data here
         _isLoading = false;
         List<dynamic> list = jsonDecode(response.body)['blogs'];
         list.forEach((element) {
@@ -142,7 +124,6 @@ class _MyAppState extends State<MyApp> {
         print('Response data: ${response.body}');
       }
     } catch (e) {
-      // Handle any errors that occurred during the request
       print('FetchBlogs Error: $e');
     }
 
