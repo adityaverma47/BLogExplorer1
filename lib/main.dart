@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Blog_Explorer'),
+          title: const Text('Blog_Explorer'),
         ),
         body: !_isLoading? ListView.builder(
           itemCount: blogList.length,
