@@ -31,7 +31,6 @@ class _MyAppState extends State<MyApp> {
     ]);
     if(_isLoading){
       fetchBlogs().whenComplete(() => {
-
         setState(() {})
       });
     }
