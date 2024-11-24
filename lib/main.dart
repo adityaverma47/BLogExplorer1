@@ -34,10 +34,8 @@ class _MyAppState extends State<MyApp> {
         setState(() {})
       });
     }
-
     return MaterialApp(
       title: 'BlogExplorer',
-
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
