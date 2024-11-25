@@ -98,6 +98,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+
   Future<List<ListData>> fetchBlogs() async {
     blogList = [];
     const String url = 'https://intent-kit-16.hasura.app/api/rest/blogs';
