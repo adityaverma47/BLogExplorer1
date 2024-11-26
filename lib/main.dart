@@ -105,8 +105,10 @@ class _MyAppState extends State<MyApp> {
     const String adminSecret = '32qR4KmXOIpsGPQKMqEJHGJS27G5s7HdSKO3gdtQd2kv5e852SiYwWNfxkZOBuQ6';
     print('fetchBlogs');
     try {
+
       final response = await http.get(Uri.parse(url), headers: {
         'x-hasura-admin-secret': adminSecret,
+
       });
 
       if (response.statusCode == 200) {
