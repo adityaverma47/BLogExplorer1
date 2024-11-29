@@ -52,6 +52,7 @@ class _MyAppState extends State<MyApp> {
                       borderRadius:BorderRadius.circular(9),
                       color:Colors.white
                   ),
+
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     children: [
