@@ -50,6 +50,7 @@ class _MyAppState extends State<MyApp> {
                   padding: const EdgeInsets.all(8.0),
                   decoration:BoxDecoration(
                       borderRadius:BorderRadius.circular(9),
+
                       color:Colors.white
                   ),
 
