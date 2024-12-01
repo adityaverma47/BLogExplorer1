@@ -9,6 +9,7 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.blueAccent
   ));
+
   runApp(const MyApp());
 }
 
