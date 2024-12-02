@@ -21,6 +21,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
   late List<ListData> blogList = [];
   bool _isLoading=true;
 
